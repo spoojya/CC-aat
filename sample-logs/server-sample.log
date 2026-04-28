@@ -1,0 +1,10 @@
+2026-04-28 09:15:00 INFO Server started successfully
+2026-04-28 09:15:10 INFO Connected to cache layer
+2026-04-28 09:16:02 WARNING CPU usage crossed 75 percent
+2026-04-28 09:16:45 ERROR Database connection timeout
+2026-04-28 09:17:11 INFO Retrying database connection
+2026-04-28 09:17:43 ERROR Database connection failed again
+2026-04-28 09:18:00 WARNING Disk usage nearing limit
+2026-04-28 09:18:25 INFO Alert email triggered
+2026-04-28 09:19:01 ERROR Background job stopped unexpectedly
+2026-04-28 09:19:30 INFO Recovery process initiated

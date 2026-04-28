@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: cloud-log-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false          # Set this manually in Render dashboard (use MongoDB Atlas)
+      - key: CLIENT_URL
+        fromService:
+          name: cloud-log-frontend
+          type: web
+          property: host     # Render auto-fills the frontend URL here
+    healthCheckPath: /api/health
+
+  - type: web
+    name: cloud-log-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: cloud-log-backend
+          type: web
+          property: host     # Render auto-fills the backend URL here
